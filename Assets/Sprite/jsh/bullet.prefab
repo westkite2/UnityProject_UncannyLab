@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2394802606983007933}
   - component: {fileID: 4617955454542171331}
-  - component: {fileID: -1532993206105556068}
   - component: {fileID: 2311828495613228806}
   - component: {fileID: -7548832032966714942}
+  - component: {fileID: -5853444419094074061}
   m_Layer: 0
   m_Name: bullet
   m_TagString: bullet
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1168435514869335113}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.71, y: 3.24, z: 0}
-  m_LocalScale: {x: 1, y: 1.0739, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.4, z: 0.7}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 0.4123801, g: 0.7169812, b: 0.32805273, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 3eff75fd31cdc4a46bc139b8bdc08cfc, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -85,22 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &-1532993206105556068
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1168435514869335113}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!50 &2311828495613228806
 Rigidbody2D:
   serializedVersion: 4
@@ -134,4 +118,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2463548bb2eb242438a86099f4edbb11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 4
+--- !u!70 &-5853444419094074061
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168435514869335113}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -2.680935, y: 6.120646}
+  m_Size: {x: 5.119497, y: 1.5180662}
+  m_Direction: 1

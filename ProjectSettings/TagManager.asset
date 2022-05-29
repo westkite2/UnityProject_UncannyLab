@@ -6,6 +6,10 @@ TagManager:
   tags:
   - player
   - bullet
+  - endpoint
+  - potion
+  - gun
+  - bulletimage
   layers:
   - Default
   - TransparentFX
