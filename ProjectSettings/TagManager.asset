@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - player
+  - bullet
+  - endpoint
+  - potion
+  - gun
+  - bulletimage
   layers:
   - Default
   - TransparentFX
