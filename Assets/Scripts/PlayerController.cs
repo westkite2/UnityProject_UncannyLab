@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 3.0f;
+    public float speed = 2.0f;
+
+    private int playerNum;
 
     Rigidbody2D rigidbody2d;
     float horizontal;
@@ -18,13 +20,32 @@ public class PlayerController : MonoBehaviour
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        switch (gameObject.name)
+        {
+            case "Player1":
+                playerNum = 1;
+                break;
+            case "Player2":
+                playerNum = 2;
+                break;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
+        //Get keyboard Input
+        if(playerNum == 1)
+        {
+            horizontal = Input.GetAxis("Horizontal2");
+            vertical = Input.GetAxis("Vertical2");
+        }
+        else if(playerNum == 2)
+        {
+            horizontal = Input.GetAxis("Horizontal");
+            vertical = Input.GetAxis("Vertical");
+        }
 
         // Change direction of player animation
         Vector2 move = new Vector2(horizontal, vertical);
