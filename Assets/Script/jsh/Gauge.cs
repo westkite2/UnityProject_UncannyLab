@@ -5,16 +5,21 @@ using UnityEngine.UI;
 
 public class Gauge : MonoBehaviour
 {
-    Slider slTimer;
+    public Slider slTimer;
     float fSliderBarTime;
 
     void Start()
     {
         slTimer = GetComponent<Slider>();
-        slTimer.value = 100;    
+        slTimer.value = 60;    
     }
 
     void Update()
+    {
+        berserkergauge();
+    }
+
+    public void berserkergauge()
     {
         if (slTimer.value>0.0f)
         {
@@ -25,6 +30,4 @@ public class Gauge : MonoBehaviour
             Debug.Log("Time is Zero.");
         }
     }
-
-
 }

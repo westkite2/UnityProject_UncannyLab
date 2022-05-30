@@ -36,9 +36,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Script\jsh\player2Attak.cs" />
-     <Compile Include="Assets\Script\jsh\player.cs" />
-     <Compile Include="Assets\Script\jsh\playerAttak.cs" />
+     <Compile Include="Assets\Script\jsh\player1Attack.cs" />
+     <Compile Include="Assets\Script\jsh\player2Attack.cs" />
      <Compile Include="Assets\Script\jsh\potion.cs" />
      <Compile Include="Assets\Script\jsh\bullet.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
@@ -47,6 +46,8 @@
      <Compile Include="Assets\Script\jsh\enemy.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Script\jsh\item.cs" />
+     <Compile Include="Assets\Script\jsh\potion2.cs" />
+     <Compile Include="Assets\Script\jsh\gun.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.30f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
