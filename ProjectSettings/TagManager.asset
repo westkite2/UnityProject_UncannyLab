@@ -10,6 +10,7 @@ TagManager:
   - potion
   - gun
   - bulletimage
+  - enemy
   layers:
   - Default
   - TransparentFX
