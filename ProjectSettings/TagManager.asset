@@ -11,11 +11,15 @@ TagManager:
   - gun
   - bulletimage
   - enemy
+  - fog
+  - fire
+  - water
+  - key
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - player
   - Water
   - UI
   - 
