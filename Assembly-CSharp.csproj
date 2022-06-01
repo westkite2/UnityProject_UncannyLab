@@ -36,18 +36,19 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Script\jsh\player1Attack.cs" />
-     <Compile Include="Assets\Script\jsh\player2Attack.cs" />
-     <Compile Include="Assets\Script\jsh\potion.cs" />
-     <Compile Include="Assets\Script\jsh\bullet.cs" />
-     <Compile Include="Assets\Scripts\CameraController.cs" />
-     <Compile Include="Assets\Script\jsh\Gauge.cs" />
-     <Compile Include="Assets\Script\jsh\Gauge2p.cs" />
-     <Compile Include="Assets\Script\jsh\enemy.cs" />
-     <Compile Include="Assets\Scripts\PlayerController.cs" />
-     <Compile Include="Assets\Script\jsh\item.cs" />
-     <Compile Include="Assets\Script\jsh\potion2.cs" />
-     <Compile Include="Assets\Script\jsh\gun.cs" />
+     <Compile Include="Assets\Scripts\sohyun\gun.cs" />
+     <Compile Include="Assets\Scripts\sohyun\player1Attack.cs" />
+     <Compile Include="Assets\Scripts\sohyun\player2Attack.cs" />
+     <Compile Include="Assets\Scripts\sohyun\potion.cs" />
+     <Compile Include="Assets\Scripts\sohyun\bullet.cs" />
+     <Compile Include="Assets\Scripts\seoyeon\CameraController.cs" />
+     <Compile Include="Assets\Scripts\sohyun\Gauge.cs" />
+     <Compile Include="Assets\Scripts\sohyun\Gauge2p.cs" />
+     <Compile Include="Assets\Scripts\sohyun\potion2.cs" />
+     <Compile Include="Assets\Scripts\sohyun\enemy.cs" />
+     <Compile Include="Assets\Scripts\seoyeon\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\sohyun\item.cs" />
+     <Compile Include="Assets\Scripts\sohyun\bullet2.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.30f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
