@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class player1Attack : MonoBehaviour
 {
-    public GameObject bullet2;
+    public GameObject bullet;
     public GameObject fire;
     public GameObject fog;
     public GameObject Player;
@@ -24,30 +24,23 @@ public class player1Attack : MonoBehaviour
     private float Dist;
     private float Dist2;
 
-    private Transform pos;
+    public Transform pos;
+    
 
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {   
         if(hasbullet == true && hasgun == true)
         {   if(Input.GetKeyDown(KeyCode.Q))
             {
-                Instantiate(bullet2,pos.position, transform.rotation);
+                Instantiate(bullet, pos.position, transform.rotation);
             }
         }
 
         if(hasgunbullet == true)
         {   if(Input.GetKeyDown(KeyCode.Q))
             {
-                Instantiate(bullet2,pos.position, transform.rotation);
+                Instantiate(bullet, pos.position, transform.rotation);
             }
         }
 
@@ -75,6 +68,7 @@ public class player1Attack : MonoBehaviour
         if(other.gameObject.tag == "enemy")
         {
             Time.timeScale = 0f;
+            SceneManager.LoadScene("GameOver");
             Destroy(gameObject);
         }
 
@@ -88,6 +82,11 @@ public class player1Attack : MonoBehaviour
         {
             haskey = true;
             Destroy(other.gameObject);
+        }
+    
+        if(other.gameObject == fire)
+        {
+            SceneManager.LoadScene("GameOver");
         }
 
         

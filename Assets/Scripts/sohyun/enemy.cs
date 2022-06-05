@@ -6,7 +6,11 @@ public class enemy : MonoBehaviour
 {
     int health = 1;
     public float speed;
+    public GameObject boomVFX;
+    public Transform boomVFXpos;
     bool isleft = true;
+
+
 
 
     void Start()
@@ -27,6 +31,7 @@ public class enemy : MonoBehaviour
         if(health <= 0) 
         {
             Destroy(this.gameObject);
+            Instantiate(boomVFX, boomVFXpos.position, transform.rotation);
         } 
     }
 

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class player2Attack : MonoBehaviour
 {
-    public GameObject bullet2;
+    public GameObject bullet;
     public GameObject fire;
     public GameObject fog;
     public GameObject Player;
@@ -24,7 +24,7 @@ public class player2Attack : MonoBehaviour
     private float Dist;
     private float Dist2;
 
-    private Transform pos2;
+    public Transform pos2;
 
 
 
@@ -40,14 +40,14 @@ public class player2Attack : MonoBehaviour
         if(hasbullet == true && hasgun == true)
         {   if(Input.GetKeyDown(KeyCode.L))
             {
-                Instantiate(bullet2, pos2.position, transform.rotation);
+                Instantiate(bullet,pos2.position, transform.rotation);
             }
         }
 
         if(hasgunbullet == true)
-        {   if(Input.GetKeyDown(KeyCode.Q))
+        {   if(Input.GetKeyDown(KeyCode.L))
             {
-                Instantiate(bullet2,pos2.position, transform.rotation);
+                Instantiate(bullet,pos2.position, transform.rotation);
             }
         }
 
@@ -75,6 +75,7 @@ public class player2Attack : MonoBehaviour
         {
             Time.timeScale = 0f;
             Destroy(gameObject);
+            SceneManager.LoadScene("GameOver");
         }
 
         if(other.gameObject.tag == "water")
@@ -87,6 +88,11 @@ public class player2Attack : MonoBehaviour
         {
             haskey = true;
             Destroy(other.gameObject);
+        }
+
+        if(other.gameObject == fire)
+        {
+            SceneManager.LoadScene("GameOver");
         }
 
     }
