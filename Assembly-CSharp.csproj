@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\sohyun\enemy.cs" />
     <Compile Include="Assets\Scripts\seoyeon\PlayerController.cs" />
     <Compile Include="Assets\Scripts\sohyun\item.cs" />
+    <Compile Include="Assets\Scripts\seoyeon\GameManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
