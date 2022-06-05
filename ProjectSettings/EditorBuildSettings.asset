@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SeoyeonMainScene.unity
     guid: a48717a7dffa6a045953f7e9a6f439a6
   - enabled: 1
