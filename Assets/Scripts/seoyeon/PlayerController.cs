@@ -13,28 +13,62 @@ public class PlayerController : MonoBehaviour
     float vertical;
 
     Animator animator;
-    Vector2 lookDirection = new Vector2(1, 0);
+    Vector2 lookDirection;
 
+    GameManager gameManager;
+    
+    void SetAnimator(int num)
+    {        
+        switch (num)
+        {
+            case 1:
+                Debug.Log("1~");
+                animator.runtimeAnimatorController = Resources.Load("Animation/Player1Controller") as RuntimeAnimatorController;
+                break;
+            case 2:
+                Debug.Log("2~");
+                animator.runtimeAnimatorController = Resources.Load("Animation/Player2Controller") as RuntimeAnimatorController;
+                break;
+            case 3:
+                animator.runtimeAnimatorController = Resources.Load("Animation/Player3Controller") as RuntimeAnimatorController;
+                break;
+            case 4:
+                animator.runtimeAnimatorController = Resources.Load("Animation/Player4Controller") as RuntimeAnimatorController;
+                break;
+        }
+        
+    }
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameManager.Instance;
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
+        //Identify player view
         switch (gameObject.name)
         {
             case "Player1":
                 playerNum = 1;
+                lookDirection = new Vector2(1, 0);
                 break;
             case "Player2":
                 playerNum = 2;
+                lookDirection = new Vector2(-1, 0);
                 break;
         }
     }
 
+
     // Update is called once per frame
     void Update()
     {
+        if(gameManager.step == 3)
+        {
+            if(playerNum == 1) SetAnimator(gameManager.player1character);
+            else SetAnimator(gameManager.player2character);
+        }
+
         //Get keyboard Input
         if(playerNum == 1)
         {

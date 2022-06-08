@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject player1Text;
     public GameObject player2Text;
+    public GameObject startText;
     public Button startButton;
     public Button Button1;
     public Button Button2;
@@ -17,9 +18,24 @@ public class GameManager : MonoBehaviour
     public GameObject CharacterSelectCanvas;
     public int player1character;
     public int player2character;
-    private int step;
+    public int step;
 
     public GameObject Shade;
+
+    public static GameManager Instance; // A static reference to the GameManager instance
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            DontDestroyOnLoad(gameObject); // Keep the GameObject, this component is attached to, across different scenes
+            Instance = this;
+        }
+        else if (Instance != this) // If there is already an instance and it's not `this` instance
+        {
+            Destroy(gameObject); // Destroy the GameObject, this component is attached to
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +45,7 @@ public class GameManager : MonoBehaviour
         CharacterSelectCanvas.SetActive(true);
         player1Text.SetActive(true);
         player2Text.SetActive(false);
+        startText.SetActive(false);
         startButton.interactable = false;
         step = 1;
     }
@@ -51,7 +68,6 @@ public class GameManager : MonoBehaviour
         if (step == 1)
         {
             player1character = GetCharacterNumber();
-            Debug.Log("Player1 selected " + player1character);
             step = 2;
             player1Text.SetActive(false);
             player2Text.SetActive(true);
@@ -59,8 +75,9 @@ public class GameManager : MonoBehaviour
         else if (step == 2)
         {
             player2character = GetCharacterNumber();
-            Debug.Log("Player 2 selected " + player2character);
             step = 3;
+            player2Text.SetActive(false);
+            startText.SetActive(true);
         }
     }
 
@@ -81,6 +98,6 @@ public class GameManager : MonoBehaviour
                 Button4.interactable = false;
                 return 4;
         }
-        return 0;
+        return -1;
     }
 }
