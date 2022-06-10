@@ -5,6 +5,7 @@ using UnityEngine;
 public class bullet : MonoBehaviour
 {
     public float speed;
+    
 
     void Start()
     {
@@ -12,10 +13,8 @@ public class bullet : MonoBehaviour
     }
 
     void Update()
-    {
-
-            transform.Translate(transform.right*speed*Time.deltaTime);
-
+    {    
+        transform.Translate(transform.right*speed*Time.deltaTime);
     }
 
     void DestroyBullet()

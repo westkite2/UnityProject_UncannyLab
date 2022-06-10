@@ -13,7 +13,9 @@ public class PlayerController : MonoBehaviour
     float vertical;
 
     Animator animator;
-    Vector2 lookDirection = new Vector2(1, 0);
+    public Vector2 lookDirection = new Vector2(1, 0);
+    
+    
 
     // Start is called before the first frame update
     void Start()

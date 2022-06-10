@@ -43,12 +43,16 @@
      <Compile Include="Assets\Scripts\sohyun\bullet.cs" />
      <Compile Include="Assets\Scripts\seoyeon\CameraController.cs" />
      <Compile Include="Assets\Scripts\sohyun\Gauge.cs" />
+     <Compile Include="Assets\Scripts\sohyun\restart.cs" />
+     <Compile Include="Assets\Scripts\sohyun\boomVFX.cs" />
      <Compile Include="Assets\Scripts\sohyun\Gauge2p.cs" />
      <Compile Include="Assets\Scripts\sohyun\potion2.cs" />
      <Compile Include="Assets\Scripts\sohyun\enemy.cs" />
      <Compile Include="Assets\Scripts\seoyeon\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\sohyun\bullet2.cs" />
      <Compile Include="Assets\Scripts\sohyun\inventory.cs" />
-     <Compile Include="Assets\Scripts\sohyun\boomVFX.cs" />
+     <Compile Include="Assets\Scripts\sohyun\beltitem.cs" />
+     <Compile Include="Assets\Scripts\sohyun\beltitem2.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.30f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

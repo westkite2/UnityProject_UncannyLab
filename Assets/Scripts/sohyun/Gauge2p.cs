@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Gauge2p : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class Gauge2p : MonoBehaviour
         }
         else
         {
-            Debug.Log("Time is Zero.2");
+            SceneManager.LoadScene("GameOver");
         }
     }
 
