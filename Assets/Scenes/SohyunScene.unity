@@ -156,7 +156,7 @@ PrefabInstance:
       objectReference: {fileID: 724610273}
     - target: {fileID: 8340222473677985657, guid: 4e3faa00a868ff1439d1fcff11bc1d09, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8340222473677985657, guid: 4e3faa00a868ff1439d1fcff11bc1d09, type: 3}
       propertyPath: m_LocalScale.x
@@ -172,11 +172,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8340222473677985657, guid: 4e3faa00a868ff1439d1fcff11bc1d09, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.96
+      value: -6.83
       objectReference: {fileID: 0}
     - target: {fileID: 8340222473677985657, guid: 4e3faa00a868ff1439d1fcff11bc1d09, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.02
+      value: -4.09
       objectReference: {fileID: 0}
     - target: {fileID: 8340222473677985657, guid: 4e3faa00a868ff1439d1fcff11bc1d09, type: 3}
       propertyPath: m_LocalPosition.z
@@ -315,7 +315,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 69566256}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.7652, y: 3.8, z: 0}
+  m_LocalPosition: {x: 5.762, y: 3.802, z: 0}
   m_LocalScale: {x: 0.37236473, y: 0.2548, z: 0.2548}
   m_Children: []
   m_Father: {fileID: 0}
@@ -451,11 +451,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8340222473677985657, guid: 4e3faa00a868ff1439d1fcff11bc1d09, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.8
+      value: 6.78
       objectReference: {fileID: 0}
     - target: {fileID: 8340222473677985657, guid: 4e3faa00a868ff1439d1fcff11bc1d09, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.99
+      value: 3.9
       objectReference: {fileID: 0}
     - target: {fileID: 8340222473677985657, guid: 4e3faa00a868ff1439d1fcff11bc1d09, type: 3}
       propertyPath: m_LocalPosition.z
@@ -855,8 +855,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 80, y: 10}
+  m_AnchoredPosition: {x: 21.5063, y: 0}
+  m_SizeDelta: {x: 128.3064, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &627781957
 GameObject:
@@ -952,7 +952,7 @@ RectTransform:
   - {fileID: 293640829}
   - {fileID: 433156375}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -993,8 +993,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 21.493, y: -0.0000071525574}
-  m_SizeDelta: {x: -21.1596, y: 1.9861}
+  m_AnchoredPosition: {x: -0.00023269653, y: -0.0000071525574}
+  m_SizeDelta: {x: -0.00050354, y: 1.9861}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &646651361
 MonoBehaviour:
@@ -1222,8 +1222,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 150.2766, y: 10}
+  m_AnchoredPosition: {x: 21.8371, y: 0}
+  m_SizeDelta: {x: 127.116, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &910190240
 GameObject:
@@ -1965,8 +1965,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 21.8008, y: -0.0000042915344}
-  m_SizeDelta: {x: 50.5238, y: 2.2343}
+  m_AnchoredPosition: {x: -0.000015258789, y: -0.0000042915344}
+  m_SizeDelta: {x: -0.000068665, y: 2.2343}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1346463031
 MonoBehaviour:
@@ -2190,7 +2190,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1969184979}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.725, y: 3.838, z: 0}
+  m_LocalPosition: {x: 7.658, y: 3.79, z: 0}
   m_LocalScale: {x: 0.328815, y: 0.225, z: 0.225}
   m_Children: []
   m_Father: {fileID: 0}
