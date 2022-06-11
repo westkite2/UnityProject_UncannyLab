@@ -13,6 +13,8 @@ public class player1Attack : MonoBehaviour
 
     public GameObject bullet;
     public GameObject bullet2;
+    public GameObject bullet3;
+    public GameObject bullet4;
     public GameObject fire;
     public GameObject fog;
     public GameObject Player;
@@ -47,23 +49,6 @@ public class player1Attack : MonoBehaviour
     void Update()
     {   
         if(hasbullet == true && hasgun == true)
-        {   if(Input.GetKeyDown(KeyCode.Q))
-            {
-                if(GameObject.Find("Player1").GetComponent<PlayerController>().lookDirection.x > 0)
-                {
-                    if(Dist3 > 0.7) {PlaySound("GUN");}
-                    Instantiate(bullet, pos.position, transform.rotation);
-                }
-
-                else if(GameObject.Find("Player1").GetComponent<PlayerController>().lookDirection.x < 0)
-                {
-                    if(Dist3 > 0.7) {PlaySound("GUN");}
-                    Instantiate(bullet2, pos.position, transform.rotation);
-                }
-            }
-        }
-
-        if(hasbullet == true && hasgun == true)
         {
             hasgunbullet = true;
             hasgun = false;
@@ -75,14 +60,26 @@ public class player1Attack : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.Q))
             {    if(GameObject.Find("Player1").GetComponent<PlayerController>().lookDirection.x > 0)
                 {
-                    if(Dist3 > 0.7) {PlaySound("GUN");}
+                    PlaySound("GUN");
                     Instantiate(bullet, pos.position, transform.rotation);
                 }
 
                 else if(GameObject.Find("Player1").GetComponent<PlayerController>().lookDirection.x < 0)
                 {
-                    if(Dist3 > 0.7) {PlaySound("GUN");}
+                    PlaySound("GUN");
                     Instantiate(bullet2, pos.position, transform.rotation);
+                }
+
+                else if(GameObject.Find("Player1").GetComponent<PlayerController>().lookDirection.y > 0)
+                {
+                    PlaySound("GUN");
+                    Instantiate(bullet3, pos.position, transform.rotation);
+                }
+
+                else if(GameObject.Find("Player1").GetComponent<PlayerController>().lookDirection.y < 0)
+                {
+                    PlaySound("GUN");
+                    Instantiate(bullet4, pos.position, transform.rotation);
                 }
             }
         }
@@ -229,7 +226,7 @@ public class player1Attack : MonoBehaviour
                 audioSource.clip = audiogun;
                 break;
         }
-        audioSource.Play();
+        //audioSource.Play();
     }
 
 }

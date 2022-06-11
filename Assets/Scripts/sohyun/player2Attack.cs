@@ -13,6 +13,8 @@ public class player2Attack : MonoBehaviour
 
     public GameObject bullet;
     public GameObject bullet2;
+    public GameObject bullet3;
+    public GameObject bullet4;
     public GameObject fire;
     public GameObject fog;
     public GameObject Player;
@@ -49,24 +51,7 @@ public class player2Attack : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   
-        if(hasbullet == true && hasgun == true)
-        {   if(Input.GetKeyDown(KeyCode.L))
-            {
-                if(GameObject.Find("Player2").GetComponent<PlayerController>().lookDirection.x > 0)
-                {
-                    if(Dist3 > 0.7) {PlaySound("GUN");}
-                    Instantiate(bullet, pos.position, transform.rotation);
-                }
-
-                else if(GameObject.Find("Player2").GetComponent<PlayerController>().lookDirection.x < 0)
-                {
-                    if(Dist3 > 0.7) {PlaySound("GUN");}
-                    Instantiate(bullet2, pos.position, transform.rotation);
-                }
-            }
-        }
-        
+    {          
         if(hasbullet == true && hasgun == true)
         {
             hasgunbullet = true;
@@ -89,6 +74,18 @@ public class player2Attack : MonoBehaviour
                 {
                     PlaySound("GUN");
                     Instantiate(bullet2, pos.position, transform.rotation);
+                }
+
+                else if(GameObject.Find("Player2").GetComponent<PlayerController>().lookDirection.y > 0)
+                {
+                    PlaySound("GUN");
+                    Instantiate(bullet3, pos.position, transform.rotation);
+                }
+
+                else if(GameObject.Find("Player2").GetComponent<PlayerController>().lookDirection.y < 0)
+                {
+                    PlaySound("GUN");
+                    Instantiate(bullet4, pos.position, transform.rotation);
                 }
             }
             }
