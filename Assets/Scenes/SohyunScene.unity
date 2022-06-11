@@ -543,6 +543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slTimer: {fileID: 0}
+  speed: 1
 --- !u!114 &293640831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -771,6 +772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slTimer2: {fileID: 0}
+  speed: 1
 --- !u!114 &433156377
 MonoBehaviour:
   m_ObjectHideFlags: 0

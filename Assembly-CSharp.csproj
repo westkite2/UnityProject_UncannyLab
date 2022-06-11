@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\seoyeon\GameManager.cs" />
     <Compile Include="Assets\Scripts\sohyun\beltitem.cs" />
     <Compile Include="Assets\Scripts\seoyeon\ExitScript.cs" />
+    <Compile Include="Assets\Scripts\seoyeon\ArrowMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -7,8 +7,6 @@ using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
-    bool isGameClear;
-
     public GameObject passwordwindow;
     public GameObject player1Text;
     public GameObject player2Text;
@@ -55,7 +53,7 @@ public class GameManager : MonoBehaviour
         passwordwindow.SetActive(false);
         startButton.interactable = false;
         step = 1;
-        isGameClear = false;
+
         for (int i = 0; i < 9; i++)
         {
             isPressedArr[i] = false;
@@ -63,29 +61,24 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        if (step == 3)
+        if (step == 3) // After character selection done
         {
             startButton.interactable = true;
         }
 
-        if (ExitScript.player1Exit && ExitScript.player2Exit)
-        {
-            passwordwindow.SetActive(true);
-        }
-        else
-        {
-            passwordwindow.SetActive(false);
-        }
+        // Prompt password on exit
+        if (ExitScript.player1Exit && ExitScript.player2Exit) passwordwindow.SetActive(true);
+        else passwordwindow.SetActive(false);
 
+        // Password match test
         if (pressedCount == 6)
         {
             if (isPressedArr[0] && isPressedArr[1] && isPressedArr[3] && isPressedArr[5] && isPressedArr[7] && isPressedArr[8])
             {
                 Debug.Log("Game clear");
-                isGameClear = true;
+
             }
         }
-
     }
     public void PasswordButtonStatus(int buttonNum, bool isPressed)
     {

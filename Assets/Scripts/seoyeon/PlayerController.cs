@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     public float speed = 2.0f;
 
     private int playerNum;
-
+    private int playerCharacter;
+    private bool issettingDone = false;
     Rigidbody2D rigidbody2d;
     float horizontal;
     float vertical;
@@ -16,6 +18,14 @@ public class PlayerController : MonoBehaviour
     public Vector2 lookDirection;
 
     GameManager gameManager;
+
+    public GameObject shader1;
+    public GameObject shader2;
+
+    Image playerShade;
+    public Sprite[] sprite;
+    public GameObject targetIndicator;
+    public GameObject gauge;
 
     void SetAnimator(int num)
     {        
@@ -32,11 +42,40 @@ public class PlayerController : MonoBehaviour
                 break;
             case 4:
                 animator.runtimeAnimatorController = Resources.Load("Animation/Player4Controller") as RuntimeAnimatorController;
-                speed = 3.5f;
                 break;
-        }
-        
+        }   
     }
+
+    void SetGaugeSpeed(int num)
+    {
+        if (num == 1)
+        {
+            if (playerNum == 1) gauge.GetComponent<Gauge>().speed = 0.5f;
+            else gauge.GetComponent<Gauge2p>().speed = 0.5f;
+        }
+    }
+     void SetIndicator(int num)
+    {
+        if (num == 2) targetIndicator.SetActive(true);
+        else targetIndicator.SetActive(false);
+    }
+
+    void SetShader(int num)
+    {
+        if(num == 3)
+        {
+            if (playerNum == 1) playerShade = shader1.GetComponent<Image>();
+            else playerShade = shader2.GetComponent<Image>();
+
+            playerShade.sprite = sprite[0];
+        }
+    }
+    void SetSpeed(int num)
+    {
+        if (num == 4) speed = 3.5f;
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,21 +97,22 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
     // Update is called once per frame
     void Update()
     {
-        if(gameManager.step == 3)
+        if(gameManager.step == 3 & !issettingDone) // After character selection
         {
-            //Player custom settings
-            if (playerNum == 1)
-            {
-                SetAnimator(gameManager.player1character);
-            }
-            else
-            {
-                SetAnimator(gameManager.player2character);
-            }
+            // Identify player character number
+            if (playerNum == 1) playerCharacter = gameManager.player1character;
+            else playerCharacter = gameManager.player2character;
+
+            // Apply character private settings
+            SetAnimator(playerCharacter);
+            SetGaugeSpeed(playerCharacter);
+            SetIndicator(playerCharacter);
+            SetShader(playerCharacter);
+            SetSpeed(playerCharacter);
+            issettingDone = true;
         }
 
         //Get keyboard Input
