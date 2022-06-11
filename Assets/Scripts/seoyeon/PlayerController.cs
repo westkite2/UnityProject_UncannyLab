@@ -16,17 +16,15 @@ public class PlayerController : MonoBehaviour
     public Vector2 lookDirection;
 
     GameManager gameManager;
-    
+
     void SetAnimator(int num)
     {        
         switch (num)
         {
             case 1:
-                Debug.Log("1~");
                 animator.runtimeAnimatorController = Resources.Load("Animation/Player1Controller") as RuntimeAnimatorController;
                 break;
             case 2:
-                Debug.Log("2~");
                 animator.runtimeAnimatorController = Resources.Load("Animation/Player2Controller") as RuntimeAnimatorController;
                 break;
             case 3:
@@ -34,6 +32,7 @@ public class PlayerController : MonoBehaviour
                 break;
             case 4:
                 animator.runtimeAnimatorController = Resources.Load("Animation/Player4Controller") as RuntimeAnimatorController;
+                speed = 3.5f;
                 break;
         }
         
@@ -65,8 +64,15 @@ public class PlayerController : MonoBehaviour
     {
         if(gameManager.step == 3)
         {
-            if(playerNum == 1) SetAnimator(gameManager.player1character);
-            else SetAnimator(gameManager.player2character);
+            //Player custom settings
+            if (playerNum == 1)
+            {
+                SetAnimator(gameManager.player1character);
+            }
+            else
+            {
+                SetAnimator(gameManager.player2character);
+            }
         }
 
         //Get keyboard Input

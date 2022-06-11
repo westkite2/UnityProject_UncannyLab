@@ -7,6 +7,9 @@ using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
+    bool isGameClear;
+
+    public GameObject passwordwindow;
     public GameObject player1Text;
     public GameObject player2Text;
     public GameObject startText;
@@ -21,6 +24,9 @@ public class GameManager : MonoBehaviour
     public int step;
 
     public GameObject Shade;
+
+    private bool[] isPressedArr = new bool[10];
+    private int pressedCount;
 
     public static GameManager Instance; // A static reference to the GameManager instance
 
@@ -46,8 +52,14 @@ public class GameManager : MonoBehaviour
         player1Text.SetActive(true);
         player2Text.SetActive(false);
         startText.SetActive(false);
+        passwordwindow.SetActive(false);
         startButton.interactable = false;
         step = 1;
+        isGameClear = false;
+        for (int i = 0; i < 9; i++)
+        {
+            isPressedArr[i] = false;
+        }
     }
     private void Update()
     {
@@ -55,6 +67,31 @@ public class GameManager : MonoBehaviour
         {
             startButton.interactable = true;
         }
+
+        if (ExitScript.player1Exit && ExitScript.player2Exit)
+        {
+            passwordwindow.SetActive(true);
+        }
+        else
+        {
+            passwordwindow.SetActive(false);
+        }
+
+        if (pressedCount == 6)
+        {
+            if (isPressedArr[0] && isPressedArr[1] && isPressedArr[3] && isPressedArr[5] && isPressedArr[7] && isPressedArr[8])
+            {
+                Debug.Log("Game clear");
+                isGameClear = true;
+            }
+        }
+
+    }
+    public void PasswordButtonStatus(int buttonNum, bool isPressed)
+    {
+        isPressedArr[buttonNum - 1] = isPressed;
+        if (isPressed) pressedCount += 1;
+        else pressedCount -= 1;
     }
     public void OnclickStartButton()
     {
@@ -64,7 +101,7 @@ public class GameManager : MonoBehaviour
     }
     public void OnSelectCharacter()
     {
-
+        // character selection window control
         if (step == 1)
         {
             player1character = GetCharacterNumber();

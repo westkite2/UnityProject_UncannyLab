@@ -69,7 +69,7 @@
     <Compile Include="Assets\Scripts\seoyeon\DoorController.cs" />
     <Compile Include="Assets\Scripts\sohyun\boomVFX.cs" />
     <Compile Include="Assets\Scripts\sohyun\Gauge2p.cs" />
-    <Compile Include="Assets\Scripts\seoyeon\PasswordAnimator.cs" />
+    <Compile Include="Assets\Scripts\seoyeon\PasswordWindowAnimator.cs" />
     <Compile Include="Assets\Scripts\sohyun\potion2.cs" />
     <Compile Include="Assets\Scripts\sohyun\enemy.cs" />
     <Compile Include="Assets\Scripts\seoyeon\PlayerController.cs" />
@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\sohyun\inventory.cs" />
     <Compile Include="Assets\Scripts\seoyeon\GameManager.cs" />
     <Compile Include="Assets\Scripts\sohyun\beltitem.cs" />
+    <Compile Include="Assets\Scripts\seoyeon\ExitScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
