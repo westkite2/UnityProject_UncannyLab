@@ -26,10 +26,11 @@ public class GameManager : MonoBehaviour
     private bool[] isPressedArr = new bool[10];
     private int pressedCount;
 
-    public static GameManager Instance; // A static reference to the GameManager instance
+    //public static GameManager Instance; // A static reference to the GameManager instance
 
     void Awake()
     {
+        /*
         if (Instance == null)
         {
             DontDestroyOnLoad(gameObject); // Keep the GameObject, this component is attached to, across different scenes
@@ -38,7 +39,7 @@ public class GameManager : MonoBehaviour
         else if (Instance != this) // If there is already an instance and it's not `this` instance
         {
             Destroy(gameObject); // Destroy the GameObject, this component is attached to
-        }
+        }*/
     }
 
     // Start is called before the first frame update
@@ -63,12 +64,16 @@ public class GameManager : MonoBehaviour
     {
         if (step == 3) // After character selection done
         {
-            startButton.interactable = true;
+            if(startButton) startButton.interactable = true;
         }
 
         // Prompt password on exit
-        if (ExitScript.player1Exit && ExitScript.player2Exit) passwordwindow.SetActive(true);
-        else passwordwindow.SetActive(false);
+        if (passwordwindow)
+        {
+            if (ExitScript.player1Exit && ExitScript.player2Exit) passwordwindow.SetActive(true);
+            else passwordwindow.SetActive(false);
+
+        }
 
         // Password match test
         if (pressedCount == 6)

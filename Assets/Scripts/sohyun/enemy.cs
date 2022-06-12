@@ -11,13 +11,6 @@ public class enemy : MonoBehaviour
     bool isleft = true;
 
 
-
-
-    void Start()
-    {
-        Debug.Log("적 health 값 : " + health);
-    }
-
     void Update()
     {
         transform.Translate(Vector2.left*speed*Time.deltaTime);

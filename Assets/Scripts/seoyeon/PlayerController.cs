@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     public Vector2 lookDirection;
 
+    public GameObject objgameManager;
     GameManager gameManager;
 
     public GameObject shader1;
@@ -50,8 +51,8 @@ public class PlayerController : MonoBehaviour
     {
         if (num == 1)
         {
-            if (playerNum == 1) gauge.GetComponent<Gauge>().speed = 0.5f;
-            else gauge.GetComponent<Gauge2p>().speed = 0.5f;
+            if (playerNum == 1) gauge.GetComponent<Gauge>().speed = 0.1f;
+            else gauge.GetComponent<Gauge2p>().speed = 0.1f;
         }
     }
      void SetIndicator(int num)
@@ -79,9 +80,10 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GameManager.Instance;
+        //gameManager = GameManager.Instance;
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        gameManager = objgameManager.GetComponent<GameManager>();
 
         //Identify player view
         switch (gameObject.name)

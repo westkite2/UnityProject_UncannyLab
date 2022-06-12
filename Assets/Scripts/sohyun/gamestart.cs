@@ -7,11 +7,18 @@ public class gamestart : MonoBehaviour
 {
     public void Gamestart()
     {
-        SceneManager.LoadScene("SeoyeonScene");
+        SceneManager.LoadScene("MainScene");
     }
 
     public void GameQuit()
     {
         Application.Quit();
+
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+
     }
 }
