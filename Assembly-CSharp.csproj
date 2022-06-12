@@ -35,44 +35,6 @@
     <ImplicitlyExpandNETStandardFacades>false</ImplicitlyExpandNETStandardFacades>
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
-  <PropertyGroup>
-    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <UnityProjectGenerator>Package</UnityProjectGenerator>
-    <UnityProjectGeneratorVersion>2.0.7</UnityProjectGeneratorVersion>
-    <UnityProjectType>Game:1</UnityProjectType>
-    <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
-    <UnityVersion>2020.3.7f1</UnityVersion>
-  </PropertyGroup>
-  <ItemGroup>
-    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Assets\Scripts\sohyun\inventory2.cs" />
-    <Compile Include="Assets\Scripts\sohyun\beltitem2.cs" />
-    <Compile Include="Assets\Scripts\sohyun\player1Attack.cs" />
-    <Compile Include="Assets\Scripts\sohyun\player2Attack.cs" />
-    <Compile Include="Assets\Scripts\sohyun\potion.cs" />
-    <Compile Include="Assets\Scripts\seoyeon\ButtonController.cs" />
-    <Compile Include="Assets\Scripts\sohyun\bullet.cs" />
-    <Compile Include="Assets\Scripts\seoyeon\CameraController.cs" />
-    <Compile Include="Assets\Scripts\sohyun\Gauge.cs" />
-    <Compile Include="Assets\Scripts\sohyun\restart.cs" />
-    <Compile Include="Assets\Scripts\seoyeon\DoorController.cs" />
-    <Compile Include="Assets\Scripts\sohyun\boomVFX.cs" />
-    <Compile Include="Assets\Scripts\sohyun\Gauge2p.cs" />
-    <Compile Include="Assets\Scripts\seoyeon\PasswordWindowAnimator.cs" />
-    <Compile Include="Assets\Scripts\sohyun\potion2.cs" />
-    <Compile Include="Assets\Scripts\sohyun\enemy.cs" />
-    <Compile Include="Assets\Scripts\seoyeon\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\sohyun\bullet2.cs" />
-    <Compile Include="Assets\Scripts\seoyeon\PasswordButton.cs" />
-    <Compile Include="Assets\Scripts\seoyeon\PaperScript.cs" />
-    <Compile Include="Assets\Scripts\sohyun\inventory.cs" />
-    <Compile Include="Assets\Scripts\seoyeon\GameManager.cs" />
-    <Compile Include="Assets\Scripts\sohyun\beltitem.cs" />
-    <Compile Include="Assets\Scripts\seoyeon\ExitScript.cs" />
-    <Compile Include="Assets\Scripts\seoyeon\ArrowMovement.cs" />
-  </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\sohyun\inventory2.cs" />
      <Compile Include="Assets\Scripts\sohyun\beltitem2.cs" />
@@ -85,10 +47,13 @@
      <Compile Include="Assets\Scripts\seoyeon\CameraController.cs" />
      <Compile Include="Assets\Scripts\sohyun\Gauge.cs" />
      <Compile Include="Assets\Scripts\sohyun\restart.cs" />
+     <Compile Include="Assets\Scripts\sohyun\gamestart.cs" />
      <Compile Include="Assets\Scripts\seoyeon\DoorController.cs" />
+     <Compile Include="Assets\Scripts\seoyeon\ArrowMovement.cs" />
      <Compile Include="Assets\Scripts\sohyun\boomVFX.cs" />
      <Compile Include="Assets\Scripts\sohyun\Gauge2p.cs" />
-     <Compile Include="Assets\Scripts\seoyeon\PasswordAnimator.cs" />
+     <Compile Include="Assets\Scripts\seoyeon\PasswordWindowAnimator.cs" />
+     <Compile Include="Assets\Scripts\seoyeon\ExitScript.cs" />
      <Compile Include="Assets\Scripts\sohyun\potion2.cs" />
      <Compile Include="Assets\Scripts\sohyun\enemy.cs" />
      <Compile Include="Assets\Scripts\seoyeon\PlayerController.cs" />
@@ -99,7 +64,7 @@
      <Compile Include="Assets\Scripts\sohyun\inventory.cs" />
      <Compile Include="Assets\Scripts\seoyeon\GameManager.cs" />
      <Compile Include="Assets\Scripts\sohyun\beltitem.cs" />
-     <Compile Include="Assets\Scripts\sohyun\gamestart.cs" />
+     <Compile Include="Assets\Scripts\sohyun\gameclear.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

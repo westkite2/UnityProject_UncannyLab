@@ -76,10 +76,11 @@ public class GameManager : MonoBehaviour
             if (isPressedArr[0] && isPressedArr[1] && isPressedArr[3] && isPressedArr[5] && isPressedArr[7] && isPressedArr[8])
             {
                 Debug.Log("Game clear");
-
+                SceneManager.LoadScene("GameClear");
             }
         }
     }
+          
     public void PasswordButtonStatus(int buttonNum, bool isPressed)
     {
         isPressedArr[buttonNum - 1] = isPressed;
