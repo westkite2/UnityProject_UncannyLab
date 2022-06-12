@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ButtonController : MonoBehaviour
 {
+    public AudioSource audioSource;
     public Sprite[] spriteList;
     private SpriteRenderer spriteRenderer;
 
@@ -17,6 +18,11 @@ public class ButtonController : MonoBehaviour
         spriteRenderer.sprite = spriteList[0];
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        audioSource.Play();
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         isPressed = true;
@@ -28,5 +34,7 @@ public class ButtonController : MonoBehaviour
         isPressed = false;
         spriteRenderer.sprite = spriteList[0];
     }
+
+    
 
 }

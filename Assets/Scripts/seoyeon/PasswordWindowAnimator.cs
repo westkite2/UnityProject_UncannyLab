@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PasswordAnimator : MonoBehaviour
+public class PasswordWindowAnimator : MonoBehaviour
 {
 	public Sprite[] sprites;
 	public int spritePerFrame = 6;

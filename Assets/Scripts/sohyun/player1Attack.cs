@@ -10,9 +10,12 @@ public class player1Attack : MonoBehaviour
     public AudioClip audiowater;
     public AudioClip audiodrawer;
     public AudioClip audiogun;
+    public AudioClip audioitem;
 
     public GameObject bullet;
     public GameObject bullet2;
+    public GameObject bullet3;
+    public GameObject bullet4;
     public GameObject fire;
     public GameObject fog;
     public GameObject Player;
@@ -21,7 +24,7 @@ public class player1Attack : MonoBehaviour
     public GameObject gunimage;
     public GameObject belt;
     public GameObject beltgun;
-    public GameObject water;
+    public GameObject water1;
     public GameObject beltbullet;
     public GameObject gunbullet;
 
@@ -33,7 +36,7 @@ public class player1Attack : MonoBehaviour
 
     private float Dist;
     private float Dist2;
-    private float Dist3;
+    public float Dist3;
 
     public Transform pos;
     public Transform posbelt;
@@ -47,23 +50,6 @@ public class player1Attack : MonoBehaviour
     void Update()
     {   
         if(hasbullet == true && hasgun == true)
-        {   if(Input.GetKeyDown(KeyCode.Q))
-            {
-                if(GameObject.Find("Player1").GetComponent<PlayerController>().lookDirection.x > 0)
-                {
-                    if(Dist3 > 0.7) {PlaySound("GUN");}
-                    Instantiate(bullet, pos.position, transform.rotation);
-                }
-
-                else if(GameObject.Find("Player1").GetComponent<PlayerController>().lookDirection.x < 0)
-                {
-                    if(Dist3 > 0.7) {PlaySound("GUN");}
-                    Instantiate(bullet2, pos.position, transform.rotation);
-                }
-            }
-        }
-
-        if(hasbullet == true && hasgun == true)
         {
             hasgunbullet = true;
             hasgun = false;
@@ -75,20 +61,32 @@ public class player1Attack : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.Q))
             {    if(GameObject.Find("Player1").GetComponent<PlayerController>().lookDirection.x > 0)
                 {
-                    if(Dist3 > 0.7) {PlaySound("GUN");}
+                    PlaySound("GUN");
                     Instantiate(bullet, pos.position, transform.rotation);
                 }
 
                 else if(GameObject.Find("Player1").GetComponent<PlayerController>().lookDirection.x < 0)
                 {
-                    if(Dist3 > 0.7) {PlaySound("GUN");}
+                    PlaySound("GUN");
                     Instantiate(bullet2, pos.position, transform.rotation);
+                }
+
+                else if(GameObject.Find("Player1").GetComponent<PlayerController>().lookDirection.y > 0)
+                {
+                    PlaySound("GUN");
+                    Instantiate(bullet3, pos.position, transform.rotation);
+                }
+
+                else if(GameObject.Find("Player1").GetComponent<PlayerController>().lookDirection.y < 0)
+                {
+                    PlaySound("GUN");
+                    Instantiate(bullet4, pos.position, transform.rotation);
                 }
             }
         }
         }
 
-        Dist = Vector3.Distance(Player.transform.position, fire.transform.position);
+        //Dist = Vector3.Distance(Player.transform.position, fire.transform.position);
         Dist2 = Vector3.Distance(Player.transform.position, drawer.transform.position);
         Dist3 = Vector3.Distance(Player.transform.position, belt.transform.position);
         ExtinguishFire();
@@ -100,18 +98,21 @@ public class player1Attack : MonoBehaviour
         if(other.gameObject.tag == "gun")
         {
             hasgun = true;
+            PlaySound("ITEM");
             Destroy(other.gameObject);
         }
 
         if(other.gameObject.tag == "bulletimage")
         {
             hasbullet = true;
+            PlaySound("ITEM");
             Destroy(other.gameObject);
         }
 
         if(other.gameObject.tag == "gunbullet")
         {
             hasgunbullet = true;
+            PlaySound("ITEM");
             Destroy(other.gameObject);
         }
 
@@ -123,12 +124,14 @@ public class player1Attack : MonoBehaviour
         if(other.gameObject.tag == "water")
         {
             haswater = true;
+            PlaySound("ITEM");
             Destroy(other.gameObject);
         }
 
         if(other.gameObject.tag == "key")
         {
             haskey = true;
+            PlaySound("ITEM");
             Destroy(other.gameObject);
         }
     
@@ -137,12 +140,17 @@ public class player1Attack : MonoBehaviour
             SceneManager.LoadScene("GameOver");
         }
 
+        if(other.gameObject.tag == "potion")
+        {
+            PlaySound("ITEM");
+        }
+
         
     }
 
     void ExtinguishFire()
     {
-        if(Dist <= 1.8)
+        if(Dist <= 1.8 && Dist3 >0.7)
         {
             if(haswater == true)
             {
@@ -172,14 +180,14 @@ public class player1Attack : MonoBehaviour
     }
 
     void Conveyorbelt()
-    {
+    {   if(GameObject.Find("Player2").GetComponent<player2Attack>().Dist3 <= 0.7){
         if(Dist3<=0.7)
         {
             if(haswater == true)
             {
                 if(Input.GetKeyDown(KeyCode.Q))
                 {
-                    Instantiate(water, posbelt.position, transform.rotation);
+                    Instantiate(water1, posbelt.position, transform.rotation);
                     haswater = false;
                 }
             }
@@ -212,6 +220,7 @@ public class player1Attack : MonoBehaviour
             }
         }
     }
+    }
 
     void PlaySound(string action)
     {
@@ -228,6 +237,10 @@ public class player1Attack : MonoBehaviour
             case "GUN" :
                 audioSource.clip = audiogun;
                 break;
+
+            case "ITEM" :
+                audioSource.clip = audioitem;
+                break;    
         }
         audioSource.Play();
     }

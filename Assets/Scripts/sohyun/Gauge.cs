@@ -9,10 +9,12 @@ public class Gauge : MonoBehaviour
     public Slider slTimer;
     float fSliderBarTime;
 
+    public float speed = 0.5f;
+
     void Start()
     {
         slTimer = GetComponent<Slider>();
-        slTimer.value = 60;    
+        slTimer.value = 300;    
     }
 
     void Update()
@@ -24,7 +26,7 @@ public class Gauge : MonoBehaviour
     {
         if (slTimer.value>0.0f)
         {
-            slTimer.value -= Time.deltaTime;
+            slTimer.value -= Time.deltaTime * speed;
         }
         else
         {

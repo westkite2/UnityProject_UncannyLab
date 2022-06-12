@@ -9,10 +9,12 @@ public class Gauge2p : MonoBehaviour
     public Slider slTimer2;
     float fSliderBarTime2;
 
+    public float speed = 0.5f;
+
     void Start()
     {
         slTimer2 = GetComponent<Slider>();
-        slTimer2.value = 60;    
+        slTimer2.value = 300;    
     }
 
     void Update()
@@ -24,7 +26,7 @@ public class Gauge2p : MonoBehaviour
     {
         if (slTimer2.value>0.0f)
         {
-            slTimer2.value -= Time.deltaTime;
+            slTimer2.value -= Time.deltaTime * speed;
         }
         else
         {
