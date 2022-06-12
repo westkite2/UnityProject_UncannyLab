@@ -23,7 +23,7 @@ public class player1Attack : MonoBehaviour
     public GameObject gunimage;
     public GameObject belt;
     public GameObject beltgun;
-    public GameObject water;
+    public GameObject water1;
     public GameObject beltbullet;
     public GameObject gunbullet;
 
@@ -35,7 +35,7 @@ public class player1Attack : MonoBehaviour
 
     private float Dist;
     private float Dist2;
-    private float Dist3;
+    public float Dist3;
 
     public Transform pos;
     public Transform posbelt;
@@ -139,7 +139,7 @@ public class player1Attack : MonoBehaviour
 
     void ExtinguishFire()
     {
-        if(Dist <= 1.8)
+        if(Dist <= 1.8 && Dist3 >0.7)
         {
             if(haswater == true)
             {
@@ -169,14 +169,14 @@ public class player1Attack : MonoBehaviour
     }
 
     void Conveyorbelt()
-    {
+    {   if(GameObject.Find("Player2").GetComponent<player2Attack>().Dist3 <= 0.7){
         if(Dist3<=0.7)
         {
             if(haswater == true)
             {
                 if(Input.GetKeyDown(KeyCode.Q))
                 {
-                    Instantiate(water, posbelt.position, transform.rotation);
+                    Instantiate(water1, posbelt.position, transform.rotation);
                     haswater = false;
                 }
             }
@@ -209,6 +209,7 @@ public class player1Attack : MonoBehaviour
             }
         }
     }
+    }
 
     void PlaySound(string action)
     {
@@ -226,7 +227,7 @@ public class player1Attack : MonoBehaviour
                 audioSource.clip = audiogun;
                 break;
         }
-        //audioSource.Play();
+        audioSource.Play();
     }
 
 }
