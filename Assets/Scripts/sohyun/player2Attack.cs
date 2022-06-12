@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class player2Attack : MonoBehaviour
 {
-    AudioSource audioSource;
+    public AudioSource audioSource;
     public AudioClip audiowater;
     public AudioClip audiodrawer;
     public AudioClip audiogun;
@@ -27,7 +27,6 @@ public class player2Attack : MonoBehaviour
     public GameObject beltbullet;
     public GameObject gunbullet;
 
-
     public bool hasgun;
     public bool hasbullet;
     public bool haswater;
@@ -36,7 +35,7 @@ public class player2Attack : MonoBehaviour
 
     private float Dist;
     private float Dist2;
-    private float Dist3;
+    public float Dist3;
 
     public Transform pos;
     public Transform posbelt;
@@ -144,7 +143,7 @@ public class player2Attack : MonoBehaviour
     }
 
     void Conveyorbelt()
-    {
+    {   if(GameObject.Find("Player1").GetComponent<player1Attack>().Dist3 <= 0.7){
         if(Dist3<=0.7)
         {
             if(haswater == true)
@@ -184,10 +183,11 @@ public class player2Attack : MonoBehaviour
             }
         }
     }
+    }
     
     void ExtinguishFire()
     {
-        if(Dist <= 1.7)
+        if(Dist <= 1.7 && Dist3 > 0.7)
         {   
             if(haswater == true){
                 if(Input.GetKeyDown(KeyCode.L))
@@ -231,6 +231,4 @@ public class player2Attack : MonoBehaviour
         }
         audioSource.Play();
     }
-
-
 }
