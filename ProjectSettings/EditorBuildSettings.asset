@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/GameStart.unity
     guid: 754605e165bb49d4192bd26e12d9d53c
   - enabled: 1
-    path: Assets/Scenes/SeoyeonScene.unity
+    path: Assets/Scenes/MainScene.unity
     guid: ebe3aaafb1c54ab47a4500d8e5d443b0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SohyunScene.unity
     guid: 4bf39d9a8f3a14043ad6ef8ba243c25e
   - enabled: 1

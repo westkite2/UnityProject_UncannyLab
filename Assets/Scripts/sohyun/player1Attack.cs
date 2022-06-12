@@ -85,7 +85,7 @@ public class player1Attack : MonoBehaviour
         }
         }
 
-        Dist = Vector3.Distance(Player.transform.position, fire.transform.position);
+        //Dist = Vector3.Distance(Player.transform.position, fire.transform.position);
         Dist2 = Vector3.Distance(Player.transform.position, drawer.transform.position);
         Dist3 = Vector3.Distance(Player.transform.position, belt.transform.position);
         ExtinguishFire();

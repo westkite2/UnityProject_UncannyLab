@@ -9,6 +9,7 @@ public class PasswordButton : MonoBehaviour
     private Image image;
     private int buttonNum;
     private bool isPressed;
+    public GameObject objGameManager;
     GameManager gameManager;
 
     private int GetButtonNum(string name)
@@ -40,7 +41,8 @@ public class PasswordButton : MonoBehaviour
     void Start()
     {
         image = GetComponent<Image>();
-        gameManager = GameManager.Instance;
+        //gameManager = GameManager.Instance;
+        gameManager = objGameManager.GetComponent<GameManager>();
         image.sprite = sprite[0];
         isPressed = false;
         buttonNum = GetButtonNum(gameObject.name);

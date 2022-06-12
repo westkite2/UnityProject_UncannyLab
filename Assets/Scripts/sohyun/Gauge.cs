@@ -9,7 +9,7 @@ public class Gauge : MonoBehaviour
     public Slider slTimer;
     float fSliderBarTime;
 
-    public float speed = 1;
+    public float speed = 0.5f;
 
     void Start()
     {
