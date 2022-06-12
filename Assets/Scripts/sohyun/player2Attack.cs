@@ -41,14 +41,6 @@ public class player2Attack : MonoBehaviour
     public Transform pos;
     public Transform posbelt;
 
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {          
@@ -90,8 +82,8 @@ public class player2Attack : MonoBehaviour
             }
             }
         }
-
-        Dist = Vector3.Distance(Player.transform.position, fire.transform.position);
+        if (fire) Dist = Vector3.Distance(Player.transform.position, fire.transform.position);
+        else Dist = 3;
         Dist2 = Vector3.Distance(Player.transform.position, drawer.transform.position);
         Dist3 = Vector3.Distance(Player.transform.position, belt.transform.position);
         ExtinguishFire();

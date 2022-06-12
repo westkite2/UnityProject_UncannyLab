@@ -7,6 +7,7 @@ public class ButtonController : MonoBehaviour
     public AudioSource audioSource;
     public Sprite[] spriteList;
     private SpriteRenderer spriteRenderer;
+    public bool isBeltButton = false;
 
     public bool status { get { return isPressed; } }
     private bool isPressed = false;
@@ -20,7 +21,7 @@ public class ButtonController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        audioSource.Play();
+        if(!isBeltButton) audioSource.Play();
     }
 
     private void OnTriggerStay2D(Collider2D collision)

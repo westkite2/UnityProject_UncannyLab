@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
     }
     void SetSpeed(int num)
     {
-        if (num == 4) speed = 3.5f;
+        if (num == 4) speed = 2f;
     }
 
 
