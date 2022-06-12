@@ -10,6 +10,7 @@ public class player1Attack : MonoBehaviour
     public AudioClip audiowater;
     public AudioClip audiodrawer;
     public AudioClip audiogun;
+    public AudioClip audioitem;
 
     public GameObject bullet;
     public GameObject bullet2;
@@ -97,18 +98,21 @@ public class player1Attack : MonoBehaviour
         if(other.gameObject.tag == "gun")
         {
             hasgun = true;
+            PlaySound("ITEM");
             Destroy(other.gameObject);
         }
 
         if(other.gameObject.tag == "bulletimage")
         {
             hasbullet = true;
+            PlaySound("ITEM");
             Destroy(other.gameObject);
         }
 
         if(other.gameObject.tag == "gunbullet")
         {
             hasgunbullet = true;
+            PlaySound("ITEM");
             Destroy(other.gameObject);
         }
 
@@ -120,18 +124,25 @@ public class player1Attack : MonoBehaviour
         if(other.gameObject.tag == "water")
         {
             haswater = true;
+            PlaySound("ITEM");
             Destroy(other.gameObject);
         }
 
         if(other.gameObject.tag == "key")
         {
             haskey = true;
+            PlaySound("ITEM");
             Destroy(other.gameObject);
         }
     
         if(other.gameObject == fire)
         {
             SceneManager.LoadScene("GameOver");
+        }
+
+        if(other.gameObject.tag == "potion")
+        {
+            PlaySound("ITEM");
         }
 
         
@@ -226,6 +237,10 @@ public class player1Attack : MonoBehaviour
             case "GUN" :
                 audioSource.clip = audiogun;
                 break;
+
+            case "ITEM" :
+                audioSource.clip = audioitem;
+                break;    
         }
         audioSource.Play();
     }

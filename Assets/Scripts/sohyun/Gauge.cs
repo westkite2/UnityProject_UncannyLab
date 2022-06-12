@@ -14,7 +14,7 @@ public class Gauge : MonoBehaviour
     void Start()
     {
         slTimer = GetComponent<Slider>();
-        slTimer.value = 60;    
+        slTimer.value = 300;    
     }
 
     void Update()

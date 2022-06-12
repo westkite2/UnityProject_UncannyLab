@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
+    public AudioSource audioSource;
     public GameObject passwordwindow;
     public GameObject player1Text;
     public GameObject player2Text;
@@ -83,7 +84,10 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Game clear");
                 SceneManager.LoadScene("GameClear");
             }
+
+            else audioSource.Play();
         }
+
     }
           
     public void PasswordButtonStatus(int buttonNum, bool isPressed)

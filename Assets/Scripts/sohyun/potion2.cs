@@ -8,7 +8,7 @@ public class potion2 : MonoBehaviour
     public void berserker2()
     {
         Gauge2p call2 = GameObject.Find("Slider2p").GetComponent<Gauge2p>();   
-        call2.slTimer2.value +=20;
+        call2.slTimer2.value +=60;
     }
 
     public void OnTriggerEnter2D(Collider2D other) {

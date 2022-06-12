@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PasswordButton : MonoBehaviour
 {
+    public AudioSource audioSource;
     public Sprite[] sprite;
     private Image image;
     private int buttonNum;
@@ -49,11 +50,13 @@ public class PasswordButton : MonoBehaviour
     }
     public void OnClickButton()
     {
+        audioSource.Play();
         if (!isPressed) // not pressed
         {
             isPressed = true;
             image.sprite = sprite[1];
             gameManager.PasswordButtonStatus(buttonNum, isPressed);
+
         }
         else // pressed
         {
