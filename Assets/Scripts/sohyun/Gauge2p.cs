@@ -14,7 +14,7 @@ public class Gauge2p : MonoBehaviour
     void Start()
     {
         slTimer2 = GetComponent<Slider>();
-        slTimer2.value = 60;    
+        slTimer2.value = 300;    
     }
 
     void Update()

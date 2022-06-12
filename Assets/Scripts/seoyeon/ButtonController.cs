@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class ButtonController : MonoBehaviour
 {
+    public AudioSource audioSource;
     public Sprite[] spriteList;
     private SpriteRenderer spriteRenderer;
+    public bool isBeltButton = false;
 
     public bool status { get { return isPressed; } }
     private bool isPressed = false;
@@ -15,6 +17,11 @@ public class ButtonController : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = spriteList[0];
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(!isBeltButton) audioSource.Play();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -28,5 +35,7 @@ public class ButtonController : MonoBehaviour
         isPressed = false;
         spriteRenderer.sprite = spriteList[0];
     }
+
+    
 
 }

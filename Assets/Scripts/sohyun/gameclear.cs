@@ -10,8 +10,8 @@ public class gameclear : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("VideoPlay",2);
-        Invoke("returntitle",17);
+        Invoke("VideoPlay",1);
+        Invoke("returntitle",16);
     }
 
     void VideoPlay()

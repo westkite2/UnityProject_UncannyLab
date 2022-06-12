@@ -10,6 +10,7 @@ public class player2Attack : MonoBehaviour
     public AudioClip audiowater;
     public AudioClip audiodrawer;
     public AudioClip audiogun;
+    public AudioClip audioitem;
 
     public GameObject bullet;
     public GameObject bullet2;
@@ -39,14 +40,6 @@ public class player2Attack : MonoBehaviour
 
     public Transform pos;
     public Transform posbelt;
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -89,8 +82,8 @@ public class player2Attack : MonoBehaviour
             }
             }
         }
-
-        Dist = Vector3.Distance(Player.transform.position, fire.transform.position);
+        if (fire) Dist = Vector3.Distance(Player.transform.position, fire.transform.position);
+        else Dist = 3;
         Dist2 = Vector3.Distance(Player.transform.position, drawer.transform.position);
         Dist3 = Vector3.Distance(Player.transform.position, belt.transform.position);
         ExtinguishFire();
@@ -103,18 +96,21 @@ public class player2Attack : MonoBehaviour
         if(other.gameObject.tag == "gun")
         {
             hasgun = true;
+            PlaySound("ITEM");
             Destroy(other.gameObject);
         }
 
         if(other.gameObject.tag == "bulletimage")
         {
             hasbullet = true;
+            PlaySound("ITEM");
             Destroy(other.gameObject);
         }
 
         if(other.gameObject.tag == "gunbullet")
         {
             hasgunbullet = true;
+            PlaySound("ITEM");
             Destroy(other.gameObject);
         }
         
@@ -126,18 +122,25 @@ public class player2Attack : MonoBehaviour
         if(other.gameObject.tag == "water")
         {
             haswater = true;
+            PlaySound("ITEM");
             Destroy(other.gameObject);
         }
 
         if(other.gameObject.tag == "key")
         {
             haskey = true;
+            PlaySound("ITEM");
             Destroy(other.gameObject);
         }
 
         if(other.gameObject == fire)
         {
             SceneManager.LoadScene("GameOver");
+        }
+
+        if(other.gameObject.tag == "potion")
+        {
+            PlaySound("ITEM");
         }
 
     }
@@ -227,6 +230,10 @@ public class player2Attack : MonoBehaviour
             
             case "GUN" :
                 audioSource.clip = audiogun;
+                break;
+            
+            case "ITEM" :
+                audioSource.clip = audioitem;
                 break;
         }
         audioSource.Play();
